@@ -1,0 +1,188 @@
+.reccomended {
+	margin-top: 40px;
+	@include mobile {margin-top: 0;}
+	.item {
+		margin: 0 15px;
+	}
+}
+.box_grid {
+	background-color: #fff;
+	display: block;
+	position: relative;
+	margin-bottom: 30px;
+	@include box-shadow (0px 0px 20px 0px rgba(0, 0, 0, 0.10));
+	.price {
+			display: inline-block;
+			font-weight: 500;
+			color:#999;
+			strong {
+				color:$color-3;
+			}
+		}
+	a.wish_bt {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		z-index: 1;
+		@include rgba(bg, #000, 0.6);
+		padding: 9px 10px;
+		display: inline-block;
+		color: #fff;
+		line-height: $line-height-none;
+		@include border-radius(3px);
+		&::after {
+			font-family: 'ElegantIcons';
+			content: "\e030";
+			@include transition-default (all,0.5s, ease);
+		}
+		&.liked::after{
+			content: "\e089";
+			color: $color-1;
+		}
+		&:hover.liked::after{
+			color: $color-1;
+		}
+		&:hover::after {
+			content: "\e089";
+			color: #fff;
+		}
+	}
+	figure {
+		margin-bottom: 0;
+		overflow: hidden;
+		position: relative;
+		height: 210px;
+		small {
+			position: absolute;
+			@include rgba(bg, #000, 0.6);
+			left: 20px;
+			top:22px;
+			text-transform: uppercase;
+			color: #ccc;
+			font-weight: 600;
+			@include border-radius(3px);
+			padding: 7px 10px 4px 10px;
+			line-height: 1;
+		}
+		.read_more {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin-top: -12px;
+			@include transform (translateY(10px));
+			text-align: center;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			-webkit-transition: all 0.6s;
+			transition: all 0.6s;
+			z-index:2;
+			span {
+				@include rgba(bg, #fff, 0.8);
+				@include border-radius(20px);
+				display: inline-block;
+				color: #222;
+				@include fontSize(12px);
+				padding: 5px 10px;
+			}
+		}
+		&:hover .read_more {
+			opacity: 1;
+			visibility: visible;
+			@include transform (translateY(0));
+		}
+		a {
+			img {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				@include transform (translate(-50%, -50%) scale(1.1));
+				@include backface-visibility (hidden);
+				width: 100%;
+				@include transition-default;
+			}
+			&:hover img {
+				@include transform (translate(-50%, -50%) scale(1));
+			}
+		}
+	}
+	.wrapper {
+		padding: 25px;
+		h3 {
+			@include fontSize(20px);
+			margin-top: 0;
+		}
+	}
+	ul {
+		padding: 20px 15px;
+		border-top: 1px solid $border-color-2;
+		li {
+			display: inline-block;
+			margin-right: 15px;
+			.score {
+				margin-top: -10px;
+			}
+			&:last-child {
+				margin-right: 0;
+				float: right;
+			}
+		}
+	}
+}
+
+/*-------- 1.2 Buttons --------*/
+a.btn_1,
+.btn_1 {
+    border: none;
+    color: #fff;
+    background: $color-1;
+    outline: none;
+	cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    line-height: $line-height-none;
+	@include transition-default;
+	@include border-radius(3px);
+	&:hover {background: $color-2; color:#fff;}
+	&.full-width{
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin-bottom: 5px;
+		&.purchase{
+			background-color: $color-3;
+			&:hover {
+				background-color: $color-2;
+			}
+		}
+		&.wishlist{
+			border-color: #555;
+			color: #555;
+		}
+	}
+	&.medium {
+		@include fontSize(16px);
+		padding: 18px 40px;
+	}
+	&.rounded {
+		@include border-radius(25px!important);
+	}
+	&.outline {
+		border: 2px solid $color-1;
+		color: $color-1;
+		padding: 11px 40px;
+		background: none;
+		&:hover {background: $color-2; color:#fff; border-color:$color-2;}
+		&:focus {outline: none;}
+	}
+}
+
+.btn_home_align {
+	text-align: right;
+	margin-bottom: 25px;
+	@include mobile {text-align: center;margin-bottom: 25px;}
+}

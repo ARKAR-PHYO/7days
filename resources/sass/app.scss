@@ -1,0 +1,142 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
+
+
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Coureui
+@import '~@coreui/coreui/scss/coreui';
+
+// IMPORTS
+
+@import  'variables';
+@import 'mixin';
+@import 'media';
+@import 'hero';
+@import 'header';
+@import 'tourpackage';
+@import 'awards';
+@import 'footer';
+
+// ADMIN
+// @import './admin/form';
+
+// ADMIN END
+
+.form-delete{
+    display: inline;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0 ;
+    padding: 0;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+    margin: 30px 0 30px 0;
+	border-color: $border-color-2;
+	&.large {
+		border-color: $border-color-2;
+		border-top-width: 4px;
+		margin-top: 60px;
+		@include tablet {margin-top: 45px;}
+		@include mobile {margin-bottom: 45px;}
+	}
+}
+
+.bg_color_1 {
+	background-color: #fff;
+}
+.bg_color_2{
+    background-color: rgb(226, 226, 226);
+}
+.bg_color_3{
+    background-color: black;
+    color: #fff;
+}
+
+.margin_80_55 {
+	padding-top: 80px;
+	padding-bottom: 55px;
+	@include tablet {padding-top: 60px; padding-bottom: 35px;}
+	@include extra-small-mobile {padding-top: 45px; padding-bottom: 15px;}
+}
+
+#toTop {
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+	z-index: 9999;
+	width: 46px;
+	height: 46px;
+	background-color: rgba(0,0,0,.6);
+	opacity: 1;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 21px;
+	color: #fff;
+	cursor: pointer;
+	&:after {
+		content: "";
+		font-family: "Montserrat";
+		position: relative;
+		display: block;
+		top: 50%;
+		-webkit-transform: translateY(-55%);
+		transform: translateY(-55%);
+	}
+	&:hover {
+		background-color: $color-1;
+	}
+}
+
+.main_title_2 {
+    span {
+        width:120px;
+        height:2px;
+        background-color:#e1e1e1;
+        display:block;
+        margin:auto;
+        em {
+            width:60px;
+            height:2px;
+            background-color:$color-1;
+            display:block;
+            margin:auto;
+        }
+    }
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    @include mobile {margin-bottom: 10px;}
+    h2 {
+        margin:25px 0 0 0;
+        @include mobile {@include fontSize(26px);}
+    }
+    h3 {
+        margin:25px 0 0 0;
+        @include mobile {@include fontSize(24px);}
+    }
+    p {
+        @include fontSize(24px);
+        font-weight: 300;
+        line-height: 1.4;
+        @include mobile {@include fontSize(18px);}
+    }
+}
+
+.social{
+    margin: 40px 0;
+    text-align: center;
+    cursor: pointer;
+    a{
+        padding: 0 1rem;
+    }
+}
